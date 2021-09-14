@@ -10,7 +10,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-typescript`,
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-styled`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
