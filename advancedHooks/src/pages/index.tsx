@@ -50,6 +50,10 @@ const HeroWrapper = styled.div`
     /* stands for 1 fraction */
     justify-items:center;
   }
+
+  .courseCard {
+    margin-top:39px;
+  }
 `
 
 const TextWrapper = styled.div`
