@@ -1,8 +1,13 @@
 import * as React from "react"
 import styled from "styled-components"
+import PurchaseButton from "../components/buttons/PurchaseButton"
+import CourseCard from "../components/cards/CourseCard"
 
 const IndexPage = () => (
     <Wrapper>
+      <HeroWrapper>
+
+      <CourseCard/>
       <TextWrapper>
           <Logo src="../images/logos/react-logo.svg" alt="logo" />
           <Title>Build a web app with React Hooks</Title>
@@ -14,22 +19,49 @@ const IndexPage = () => (
             <AuthorImage src="../images/avatars/meng.png"/>
             <Caption>Taught by Meng To</Caption>
           </AuthorWrapper>
+          <PurchaseButton/>
+          <SmallText>
+            Purchase includes access to 30 courses. Over 80 hours of content, including 12 hours for SwiftUI, iOS 13 and iOS 14
+          </SmallText>
       </TextWrapper>
+
+      </HeroWrapper>
     </Wrapper>
 )
 
 export default IndexPage
 
 const Wrapper = styled.div`
-  height: 1247px;
   background: linear-gradient(200.44deg, #4316db 13.57%, #9076e7 98.38%);
+`
+
+const HeroWrapper = styled.div`
+  display: grid;
+  max-width:1234px;
+  grid-template-columns: 360px auto;
+  /* for the card then the content */
+  gap: 60px;
+  padding: 220px 20px 0px;
+  justify-content: center;
+  margin:0 auto;
+
+  @media (max-width:780px){
+    grid-template-columns:1fr;
+    /* stands for 1 fraction */
+    justify-items:center;
+  }
 `
 
 const TextWrapper = styled.div`
   position:relative;
   display:grid;
   gap:20px;
-  padding-top:220px;
+
+  @media (max-width:780px){
+    justify-items: center;
+    text-align: center;
+  }
+  /* what we do for a smaller screen-size */
 `
 
 const AuthorWrapper = styled.div`
@@ -74,4 +106,12 @@ const Description = styled.p`
   font-size:20px;
   line-height:140%;
   color:#ffffff;
+`
+
+const SmallText = styled.p`
+  max-width: 280px;
+  font-style: normal;
+  font-size: 13px;
+  line-height:130%;
+  color:rgba(255,255,255,0.7);
 `
